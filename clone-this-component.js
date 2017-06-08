@@ -108,12 +108,12 @@ echo "$" cd ${dst}
 echo "$" rm dist/*
          rm dist/*
 #*/
-echo "$" mv src/${from1}.js src/${to1}.js
-         mv src/${from1}.js src/${to1}.js
-echo "$" mv src/${from1}.pug src/${to1}.pug
-         mv src/${from1}.pug src/${to1}.pug
-echo "$" mv src/${from1}.scss src/${to1}.scss
-         mv src/${from1}.scss src/${to1}.scss
+echo "$" git mv src/${from1}.js src/${to1}.js
+         git mv src/${from1}.js src/${to1}.js
+echo "$" git mv src/${from1}.pug src/${to1}.pug
+         git mv src/${from1}.pug src/${to1}.pug
+echo "$" git mv src/${from1}.scss src/${to1}.scss
+         git mv src/${from1}.scss src/${to1}.scss
 
 
 # Detach from the existing git upstream
@@ -148,6 +148,14 @@ for file in `grep -rl "${from4}" *` ; do
           sed -i "" "s/${from4}/${to4}/g" ${file}
   [ $? != 0 ] && exit 1
 done
+
+# Save the change to git
+echo ""
+echo "## Save changes to Git"
+echo "$" git add .
+         git add .
+echo "$ git commit -m \"Cloned from pastac-${oname}\""
+        git commit -m "Cloned from pastac-${oname}"
 
 
 # Install dependencies
