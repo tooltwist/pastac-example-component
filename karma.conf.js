@@ -50,7 +50,7 @@ module.exports = function(config) {
       {pattern: 'dist/pastac-example-component.js', included: true, served: true, watched: true, nocache: true},
       //'dist/*.html',
       //'dist/*.css',
-    	'test/spec/example.js',
+    	'test/spec/exampleComponentSpec.js',
       //{pattern: 'dist/pastac-example-component.html', included: false, served: true, watched: true, nocache: true}
       'dist/**/*.html'
     ],
