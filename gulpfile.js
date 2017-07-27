@@ -147,7 +147,7 @@ gulp.task('testpage', (done) => {
 /**
  * Run test once and exit
  */
-gulp.task('test', ['install'], function (done) {
+gulp.task('test', ['pug', 'sass', 'js', 'minjs'], function (done) {
   new Server({
     configFile: __dirname + '/karma.conf.js',
     singleRun: true

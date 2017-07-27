@@ -37,7 +37,7 @@ describe('Module: junkComponent', function () {
     return $element;
   }
 
-  it('should correctly display hello donkey 2', function () {
+  it('should correctly display hello donkey', function () {
     var elm = compileDirective();
     //expect(elm.text()).toBe('hello world');
     expect(elm.text()).toMatch('.*Name: Donkey.*');
