@@ -1,5 +1,11 @@
 'use strict';
 
+// We need to get the template from the same location as this script
+// See https://stackoverflow.com/questions/21103724/angular-directive-templateurl-relative-to-js-file
+var pastacalExampleComponent_scripts = document.getElementsByTagName("script")
+var pastacalExampleComponent_currentScriptPath = pastacalExampleComponent_scripts[pastacalExampleComponent_scripts.length-1].src;
+var pastacalExampleComponent_templateUrl = pastacalExampleComponent_currentScriptPath.replace('/pastac-example-component.js', '/pastac-example-component.html');
+
 
 angular.module('pastac-example-component', [])
 
@@ -11,7 +17,8 @@ angular.module('pastac-example-component', [])
     initialName: '@',
     onDone: '&'
   },
-  templateUrl: 'dist/pastac-example-component.html'
+  //templateUrl: 'dist/example-component.html'
+  templateUrl: pastacalExampleComponent_templateUrl
 });
 
 
